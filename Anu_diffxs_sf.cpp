@@ -40,7 +40,7 @@ leg = new TLegend(0.60,0.65,0.95,0.995);
 
 
 //Histogram with cuts on theta, energy
-//fScaleFactor_alttest to get units of 10e-38 cm^2
+//fScaleFactor_alttest to get units of cm^2
 //10e41 so the axis is in 10e-15 fm^2
 //Divide by 2*pi*d(cos(theta)) and d(omega)= 20. MeV
 tree1->Draw("1000*q0>>h1(30,0,600)","10e41*fScaleFactor_alttest/(20.*2.*TMath::Pi()*(TMath::Cos(12.5*TMath::Pi()/180.)-TMath::Cos(17.5*TMath::Pi()/180.)))*( (TMath::Abs(Mode)>50)&&(TMath::Abs(TMath::ACos(CosLep)/TMath::Pi()*180. - 15.)< 2.5) &&(TMath::Abs(Enu_true-1.0) < 0.01))","EHIST && same");
